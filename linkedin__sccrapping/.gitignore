@@ -1,0 +1,27 @@
+# ── Virtual environment ──────────────────────────────
+venv/
+env/
+.env
+
+# ── Camoufox browser profile (large, personal session data) ──
+camoufox_profile/
+
+# ── Sensitive / private files ────────────────────────
+linkedin_cookies.json        # session cookies — security risk
+esports_leads.csv            # scraped data — keep private
+
+# ── Debug / test output files ───────────────────────
+debug.html
+linkedin_test.html
+*.png                        # all screenshots (blocked_*.png, login_check.png, etc.)
+
+# ── Python cache ─────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+
+# ── IDE / OS files ───────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
