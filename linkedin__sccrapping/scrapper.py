@@ -13,8 +13,8 @@ if sys.platform == "win32":
 
 #              CONFIG
 
-EMAIL       = "urmila.utkarsh123@gmail.com"
-PASSWORD    = "Sahil@492004"
+EMAIL       = "email_address"
+PASSWORD    = "password"
 OUTPUT       = "esports_leads.csv"
 COOKIES_F    = "linkedin_cookies.json"
 # ── TIME BARRIER (currently OFF — scraper runs 24/7 including night) ──────────
