@@ -16,6 +16,7 @@ Requirements:
 
 import time
 import requests
+import sys
 
 # ── Tor control settings ────────────────────────────────────────────────────
 TOR_SOCKS_PORT   = 9150   # SOCKS5 proxy port (Tor Browser default)
@@ -25,7 +26,6 @@ TOR_PASSWORD     = ""     # Leave empty if no control password is set
 # ────────────────────────────────────────────────────────────────────────────
 
 PROXY_CONFIG = {"server": f"socks5://127.0.0.1:{TOR_SOCKS_PORT}"}
-
 
 def get_current_ip() -> str:
     """Return the current exit IP seen through Tor."""
@@ -59,8 +59,12 @@ def rotate_ip(wait: int = 5) -> str:
                 ctrl.authenticate()
             ctrl.signal(Signal.NEWNYM)
 
-        print(f"  🔄 Tor circuit rotated — waiting {wait}s for new route...")
-        time.sleep(wait)
+        print(f"  🔄 Tor circuit rotated — signaling new route...")
+        for i in range(int(wait), 0, -1):
+            sys.stdout.write(f"\r  ⏳ Verifying IP: {i}s remaining...   ")
+            sys.stdout.flush()
+            time.sleep(1)
+        sys.stdout.write("\n")
         new_ip = get_current_ip()
         print(f"  🌍 New IP: {new_ip}")
         return new_ip
