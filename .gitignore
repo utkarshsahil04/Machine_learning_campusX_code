@@ -2,3 +2,5 @@
 venv/
 
 Day 17 Movies extraction through api/
+.ipynb_checkpoints
+.claude
