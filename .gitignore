@@ -1,6 +1,41 @@
-# dependencies
+# Dependencies & Virtual Environments
 venv/
+.venv/
+env/
+ENV/
 
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDE & Editor Artifacts
+.vscode/
+.idea/
+*.code-workspace
+tempCodeRunnerFile.py
+*.tempCodeRunnerFile.py
+
+# AI Tools
+.claude/
+.gemini/
+
+# Environment Variables & Secrets
+.env
+.env.*
+
+# Scraped Data & JSON Dumps
+games.json
+gamenation_games_*.json
+
+# Specific Project Exclusions
 Day 17 Movies extraction through api/
-.ipynb_checkpoints
-.claude
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+desktop.ini
